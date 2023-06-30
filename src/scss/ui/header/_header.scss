@@ -6,6 +6,11 @@
     background-size: cover;
     background-position: center;
     padding: 3rem 0;
+    position: relative;
+
+    @include mix.tablet { 
+        padding: 3rem 0 20rem 0;
+    }
 
     &__bar {
         display: flex;
@@ -20,6 +25,49 @@
 
     &__logo {
         width: 25rem;
+    }
+
+    &__content {
+        @include mix.tablet { 
+            margin-top: 10rem;
+            max-width: 50rem;
+        }
+    }
+    
+    &__heading {
+        color: var.$white;
+        text-align: center;
+
+        @include mix.tablet { 
+            text-align: left;
+        }
+    }
+
+    &__text {
+        color: var.$white;
+        display: none;
+
+        @include mix.tablet { 
+            display: block;
+        }
+    }
+
+    &__image {
+        display: none;
+
+        @include mix.tablet { 
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: -5rem;
+            max-width: 35rem;
+            border-top-left-radius: 2rem;
+            border-bottom-left-radius: 5rem;
+        }
+
+        @include mix.desktopXL { 
+            max-width: 60rem;
+        }
     }
 }
 
