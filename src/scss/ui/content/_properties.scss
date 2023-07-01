@@ -11,4 +11,20 @@
     &__heading {
         @include mix.heading;
     }
+
+    &__grid {
+        @include mix.grid(1, 2rem);
+
+        @include mix.tablet { 
+            @include mix.grid(3, 2rem);
+        }
+    }
+}
+
+.property {
+    background-color: var.$white;
+
+    &__image{
+        aspect-ratio: 10 / 6;
+    }
 }
