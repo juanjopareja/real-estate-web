@@ -6,22 +6,24 @@
         @content;
     }
 }
+
 @mixin tablet {
     @media (min-width: var.$tablet) {
         @content;
     }
 }
+
 @mixin desktop {
     @media (min-width: var.$desktop) {
         @content;
     }
 }
+
 @mixin desktopXL {
     @media (min-width: var.$desktopxl) {
         @content;
     }
 }
-
 
 @mixin button($bgColor, $textColor) {
     background-color: $bgColor;
@@ -40,6 +42,7 @@
     @include tablet {
         width: auto;
     }
+    
     &:hover {
         background-color: darken( $bgColor, 10% );
     }
@@ -49,4 +52,21 @@
     display: grid;
     gap: $gap;
     grid-template-columns: repeat($columns, 1fr);
+}
+
+@mixin heading {
+    font-weight: 400;
+
+    span {
+        font-weight: 700;
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        height: 1rem;
+        width: 15rem;
+        margin-top: 1rem;
+        background-image: linear-gradient( to right, var.$primary 0%, var.$primary 50%, lighten(var.$primary, 20%) 50%, lighten(var.$primary, 20%) 100% );
+    }
 }
