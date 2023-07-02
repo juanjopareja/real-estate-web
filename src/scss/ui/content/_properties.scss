@@ -26,5 +26,14 @@
 
     &__image{
         aspect-ratio: 10 / 6;
+        background-size: cover;
+    }
+
+    @for $i from 1 through 6 {
+        $image: '../img/property_' + $i + '.jpg';
+
+        &:nth-child(#{$i}) &__image {
+            background-image: url($image);
+        }
     }
 }
