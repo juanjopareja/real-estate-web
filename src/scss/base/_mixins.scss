@@ -54,11 +54,15 @@
     grid-template-columns: repeat($columns, 1fr);
 }
 
-@mixin heading {
+@mixin heading($lineBreak: false) {
     font-weight: 400;
 
     span {
         font-weight: 700;
+
+        @if($lineBreak) {
+            display: block;
+        }
     }
 
     &:after {

@@ -1,0 +1,20 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.comments-blog {
+    margin-top: 5rem;
+
+    @include mix.desktop { 
+        @include mix.grid(3, 4rem);
+    }
+
+    &__blog {
+        @include mix.desktop{
+            grid-column: 2 / 4;
+        }
+    }
+
+    &__heading {
+        @include mix.heading(true);
+    }
+}
